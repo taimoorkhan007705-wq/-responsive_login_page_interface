@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #aed9e0 0%, #ec9bbd 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: white;
+    /* Adjusted gradient to 65% to pull the blue section closer to the center */
+    background: linear-gradient(to right, white 65%, #bde0fe 65%); 
+    width: 850px; /* Slightly reduced width to feel more compact */
+    height: 480px; 
+    display: flex;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden; /* Changed to hidden to clip the blue background at the corners */
+}
+
+/* Form Section */
+.form-container {
+    flex: 1.5; /* Takes more space to push the blue divider to the right */
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text { color: #f48fb1; font-size: 1.4rem; font-weight: bold; margin-bottom: 2px; }
+.welcome-msg { color: #888; font-size: 0.75rem; margin-bottom: 5px; }
+.login-title { font-size: 2rem; margin-bottom: 15px; font-weight: 700; }
+
+/* Input Groups */
+.input-group { margin-bottom: 12px; width: 100%; }
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.input-group label { font-size: 0.75rem; color: #444; font-weight: 600; }
+.forgot-link { font-size: 0.7rem; color: #aaa; text-decoration: none; }
+
+.input-group input {
+    width: 95%;
+    padding: 15px 16px;
+    background-color: #d1e9f6; 
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    margin-left: -11px;
+}
+
+/* Button & Socials */
+.login-btn {
+    background-color: #f06292;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    margin: 10px 0;
+    font-size: 0.85rem;
+}
+
+.social-divider { text-align: center; font-size: 0.7rem; color: #8ecae6; margin: 15px 0 10px 0; }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 60px;
+    height: 32px;
+    border: 1px solid #8ecae6;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Fixed Image Section */
+.image-container {
+    flex: 1; /* Smaller flex value to shrink the blue area */
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+    background-color: transparent; /* Background color is handled by the card gradient */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container without empty edges */
+    object-position: bottom left; /* Pins the character to the bottom left of its box */
+}
+
+.signup-text { margin-top: 15px; font-size: 0.7rem; text-align: center; color: #aaa; }
+.signup-text a { color: #f06292; text-decoration: none; font-weight: bold; }
+/* Image Side */
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 140%;
+    max-width: 440px; /* Reduced max-width to keep container short */
+    height: auto;     /* Removed fixed height of 571px */
+    display: block;
+    margin-right: 101px;
+}
+
+/* Mobile Responsiveness */
+/* Mobile Responsiveness - Fixed to show image */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: row; /* Forces side-by-side layout */
+        width: 98%;          /* Uses full screen width */
+        height: auto;        /* Let height adjust to content */
+        padding: 15px;
+        background: linear-gradient(to right, white 55%, #bde0fe 55%);
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .form-container {
+        flex: 1.5;           /* Gives form more room */
+        padding: 10px;
+        z-index: 2;
+    }
+
+    .image-container {
+        flex: 1;             /* Keeps image section smaller */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .image-container img {
+        width: 164%;         /* Scales image up to overlap slightly */
+        max-width: none;     /* Removes the desktop restriction */
+        margin-right: -20px; /* Pulls image toward the right edge */
+        height: 358px;
+    }
+
+    /* Shrink text for mobile to save horizontal space */
+    .login-title { font-size: 1.5rem; }
+    .logo-text { font-size: 1.2rem; }
+    .input-group label, .forgot-link { font-size: 0.65rem; }
+    
+    .social-icons a {
+        width: 40px;
+        height: 25px;
+    }
+}
